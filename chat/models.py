@@ -2,12 +2,14 @@ from datetime import datetime
 
 from django.db import models
 
+
 # Create your models here.
-class room(models.Model):
-    name=models.CharField(max_length=1000)
+class Room(models.Model):
+    name = models.CharField(max_length=1000)
+
 
 class Message(models.Model):
-    value=models.CharField(max_length=10000)
-    date=models.DateField(default=datetime.now,blank=True)
-    room=models.CharField(max_length=1000)
-    user=models.CharField(max_length=1000)
+    value = models.CharField(max_length=10000)
+    date = models.DateField(default=datetime.now, blank=True)
+    room = models.CharField(max_length=1000)
+    user = models.CharField(max_length=1000)

@@ -184,13 +184,13 @@
         </div>
     </nav>
     <div class="container">
-        <form id="post-form" method="POST" action="checkview">
-            {% csrf_token %}
+          <form id="post-form" method="POST" action="checkview">
+          {% csrf_token %}
             <label id="room_name_top">Room Name</label>
-            <input id="input1" class="form-control" type="text" name="room_name" style="margin-top: 10px;">
+            <textarea id="input1" class="form-control" aria-label="With textarea" type="text" name="room_name" id="room_name" style="margin-top: 10px;"></textarea>
             <label id="username_top">Username</label>
-            <input id="input2" class="form-control" type="text" name="username" style="margin-top: 10px;">
-            <input type="submit" class="btn" value="Start Chat Now!">
+            <textarea id="input2" class="form-control" aria-label="With textarea" type="text" name="username" id="username" style="margin-top: 10px;"></textarea>
+            <input type="submit" value="Start Chat Now!">
         </form>
     </div>
 
