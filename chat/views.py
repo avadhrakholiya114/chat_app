@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect,HttpResponse
-
+from django.shortcuts import render, redirect, HttpResponse
+from django.http import JsonResponse
 from .models import Room, Message
 
 
@@ -40,4 +40,13 @@ def send(request):
         value=message, user=username, room=room_id
     )
     new_msg.save()
-    return HttpResponse('Messsage send SuccessFully')
+    # return HttpResponse('Messsage send SuccessFully')
+
+
+def getMessge(request, room):
+    room_detail = Room.objects.get(name=room)
+    messge = Message.objects.filter(room=room_detail.id)
+    return JsonResponse({
+        "messages":list(messge.values())
+    })
+
